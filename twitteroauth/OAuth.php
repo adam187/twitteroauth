@@ -104,7 +104,7 @@ if (!class_exists('OAuthSignatureMethod')) {
  * character (ASCII code 38) even if empty.
  *   - Chapter 9.2 ("HMAC-SHA1")
  */
-if (class_exists(('OAuthSignatureMethod_HMAC_SHA1'))) {
+if (!class_exists(('OAuthSignatureMethod_HMAC_SHA1'))) {
     class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
       function get_name() {
         return "HMAC-SHA1";
@@ -132,7 +132,7 @@ if (class_exists(('OAuthSignatureMethod_HMAC_SHA1'))) {
  * over a secure channel such as HTTPS. It does not use the Signature Base String.
  *   - Chapter 9.4 ("PLAINTEXT")
  */
-if (class_exists('OAuthSignatureMethod_PLAINTEXT')) {
+if (!class_exists('OAuthSignatureMethod_PLAINTEXT')) {
     class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
       public function get_name() {
         return "PLAINTEXT";
@@ -170,7 +170,7 @@ if (class_exists('OAuthSignatureMethod_PLAINTEXT')) {
  * specification.
  *   - Chapter 9.3 ("RSA-SHA1")
  */
-if (class_exists('OAuthSignatureMethod_RSA_SHA1')) {
+if (!class_exists('OAuthSignatureMethod_RSA_SHA1')) {
     abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
       public function get_name() {
         return "RSA-SHA1";
@@ -503,7 +503,7 @@ if (!class_exists('OAuthRequest')) {
     }
 }
 
-if (class_exists('OAuthServer')) {
+if (!class_exists('OAuthServer')) {
     class OAuthServer {
       protected $timestamp_threshold = 300; // in seconds, five minutes
       protected $version = '1.0';             // hi blaine
